@@ -1,0 +1,57 @@
+#topSocial.navbar {
+    min-height: 2.5vh;
+    height: 2.5vh;
+}
+#topSocial.navbar-dark.bg-dark {
+    background-color: #363636!important;
+}
+
+.b1 {
+    background-image: url("../images/bg-yellow.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+[data-card] > .box {
+    transition: .3s ease-in-out;
+    background-color: transparent;
+    height: 10vh
+}
+
+[data-card] > [data-container] > .card {
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    transition: .3s ease-in-out;
+}
+
+[data-card]:hover {
+    cursor: pointer;
+}
+
+[data-card]:hover > [data-container] > .card {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
+}
+
+[data-card]:hover > .box {
+    background-color: #ffff00;
+}
+
+.bg-yellow {
+    background-color: #ffff00;
+}
+
+[data-social] {
+    z-index: 0;
+    height: 50vh;
+    transition: .3s ease-in-out;
+}
+
+[data-social] .card {
+    background-color: transparent!important;
+}
+
+[data-social]:hover {
+    cursor: pointer;
+    background-color: #ffff00;;
+}
