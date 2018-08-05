@@ -12,3 +12,9 @@
 */
 
 Route::get('/','IndexController@index');
+Route::get('/programs','IndexController@programs');
+Route::get('/about','IndexController@about');
+Route::get('/triatletizm','IndexController@triatletizm');
+Route::get('/feedback','IndexController@feedback');
+Route::get('/training','IndexController@training');
+Route::get('/contacts','IndexController@contacts');

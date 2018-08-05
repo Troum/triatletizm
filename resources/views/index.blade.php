@@ -1,78 +1,5 @@
-<!doctype html>
-<html lang="{{app()->getLocale()}}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/mdb.css')}}">
-    <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('custom/fontawesome-free/css/all.css')}}">
-    <link rel="stylesheet" href="{{asset('custom/client.css')}}">
-    <title>TRIATLETIZM</title>
-</head>
-<body>
-<div class="container-fluid m-0 p-0">
-    <nav id="topSocial" class="navbar navbar-expand-lg navbar-dark bg-dark z-depth-0">
-        <div class="container">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fab fa-vk"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="#">
-                        контакты
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light pt-0 d-flex justify-content-center">
-        <div class="container">
-            <div class="row m-0 p-0 w-100">
-                <div class="col-md-12 col-xl-12 m-0 p-0 d-flex justify-content-center">
-                    <a class="navbar-brand d-block text-center m-0 p-0" href="/">
-                        <img src="{{asset('images/logo.png')}}" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-12 col-xl-12 m-0 p-0">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="topNav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark text-uppercase" href="#">обо мне</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark text-uppercase" href="#">программы</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark text-uppercase" href="#">тренировки</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+@extends('layout')
+    @section('content')
     <div class="row m-0 p-0 d-flex">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-0 p-0 position-relative d-flex justify-content-center align-content-center">
             <div class="row m-0 p-0">
@@ -278,7 +205,13 @@
                                     <div class="card p-2 rounded-0 border-0">
                                         <div class="row">
                                             <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                <i class="fab fa-instagram fa-5x"></i>
+                                                <i class="fab fa-instagram fa-4x"></i>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center">
+                                                <p>Instagram</p>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 mx-auto d-flex justify-content-center" data-link>
+                                                <a href="#" class="show-social">Перейти</a>
                                             </div>
                                         </div>
                                     </div>
@@ -291,7 +224,13 @@
                                     <div class="card p-2 rounded-0 border-0">
                                         <div class="row">
                                             <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                <i class="fab fa-vk fa-5x"></i>
+                                                <i class="fab fa-vk fa-4x"></i>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center">
+                                                <p>VKontakte</p>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 mx-auto d-flex justify-content-center" data-link>
+                                                <a href="#" class="show-social">Перейти</a>
                                             </div>
                                         </div>
                                     </div>
@@ -304,7 +243,13 @@
                                     <div class="card p-2 rounded-0 border-0">
                                         <div class="row">
                                             <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                <i class="fab fa-facebook-f fa-5x"></i>
+                                                <i class="fab fa-facebook-f fa-4x"></i>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center">
+                                                <p>Facebook</p>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 mx-auto d-flex justify-content-center" data-link>
+                                                <a href="#" class="show-social">Перейти</a>
                                             </div>
                                         </div>
                                     </div>
@@ -317,7 +262,13 @@
                                     <div class="card p-2 rounded-0 border-0">
                                         <div class="row">
                                             <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                <i class="fab fa-youtube fa-5x"></i>
+                                                <i class="fab fa-youtube fa-4x"></i>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center">
+                                                <p>YouTube</p>
+                                            </div>
+                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 mx-auto d-flex justify-content-center" data-link>
+                                                <a href="#" class="show-social">Перейти</a>
                                             </div>
                                         </div>
                                     </div>
@@ -329,11 +280,4 @@
             </div>
         </div>
     </div>
-</div>
-<script src="{{asset('custom/jquery/dist/jquery.js')}}"></script>
-<script src="{{asset('custom/popper.js/dist/umd/popper.js')}}"></script>
-<script src="{{asset('custom/mdbootstrap/js/mdb.js')}}"></script>
-<script src="{{asset('custom/mdbootstrap/js/bootstrap.js')}}"></script>
-<script src="{{asset('custom/fontawesome-free/js/all.js')}}"></script>
-</body>
-</html>
+@endsection
