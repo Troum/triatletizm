@@ -1,5 +1,6 @@
 $().ready(function () {
-    let more = $('#moreInfo');
+    let more = $('#moreInfo'),
+        logo = $('#logo');
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-show]').on('click', function (e) {
         e.preventDefault();
@@ -138,5 +139,13 @@ $().ready(function () {
             more.modal('show');
         });
 
-    })
+    });
+
+    if(window.location.pathname === '/triatletizm')
+    {
+        const path = window.location.href.split('triatletizm')[0];
+        logo.attr('src', path + '/images/triatletizm-logo.png');
+    }
+
+
 });

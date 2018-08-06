@@ -111,6 +111,14 @@
                                                                     Отправить заявку
                                                                 </a>
                                                             </div>
+                                                            <div class="col-xl-12 text-center mx-auto">
+                                                                или
+                                                            </div>
+                                                            <div class="col-xl-12 text-center mx-auto">
+                                                                <a class="btn bg-yellow rounded-0">
+                                                                    Купить
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                         <div class="row mt-5 mb-5 p-5">
                                                             <div class="col-xl-9 text-center mx-auto">
@@ -171,6 +179,14 @@
                                                                     Отправить заявку
                                                                 </a>
                                                             </div>
+                                                            <div class="col-xl-12 text-center mx-auto">
+                                                                или
+                                                            </div>
+                                                            <div class="col-xl-12 text-center mx-auto">
+                                                                <a class="btn bg-yellow rounded-0">
+                                                                    Купить
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                         <div class="row mt-5 mb-5 p-5">
                                                             <div class="col-xl-9 text-center mx-auto">
@@ -229,6 +245,14 @@
                                                             <div class="col-xl-4 text-center mx-auto">
                                                                 <a class="btn bg-yellow rounded-0">
                                                                     Отправить заявку
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-xl-12 text-center mx-auto">
+                                                                или
+                                                            </div>
+                                                            <div class="col-xl-12 text-center mx-auto">
+                                                                <a class="btn bg-yellow rounded-0">
+                                                                    Купить
                                                                 </a>
                                                             </div>
                                                         </div>

@@ -373,7 +373,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                            <p class="card-text text-justify" style="font-size: smaller">Данный курс включает в себя бесплатную пробную версию моей программы тренировок и правильной схемы питания по которой вы поймете нужна ли вам платная версия или нафиг надо.</p>
+                                                            <p class="card-text text-justify" style="font-size: smaller" data-description>Данный курс включает в себя бесплатную пробную версию моей программы тренировок и правильной схемы питания по которой вы поймете нужна ли вам платная версия или нафиг надо.</p>
                                                         </div>
                                                     </div>
                                                     <div class="row m-0 p-0 col-12 d-flex justify-content-center" data-more>

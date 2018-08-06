@@ -34,7 +34,7 @@
         <div class="row m-0 p-0 w-100">
             <div class="col-md-12 col-xl-12 m-0 p-0 d-flex justify-content-center">
                 <a class="navbar-brand d-block text-center m-0 p-0" href="/">
-                    <img src="{{asset('images/logo.png')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/logo.png')}}" alt="" class="img-fluid" id="logo">
                 </a>
             </div>
             <div class="col-md-12 col-xl-12 m-0 p-0">
