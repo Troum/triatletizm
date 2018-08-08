@@ -11,11 +11,10 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
-    <link href="{{ asset('external/custom/admin/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('external/toastr/toastr.min.css')}}">
-    <link href="{{ asset('external/mdbootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('external/mdbootstrap/css/mdb.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/mdb.css')}}">
+    <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('custom/fontawesome-free/css/all.css')}}">
+    <link rel="stylesheet" href="{{asset('custom/admin.css')}}">
     <link rel="icon" href="{{asset('favicon.ico')}}">
 </head>
 <body>
@@ -73,6 +72,10 @@
             @yield('content')
         </main>
     </div>
-@yield('scripts')
+    <script src="{{asset('custom/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('custom/popper.js/dist/umd/popper.js')}}"></script>
+    <script src="{{asset('custom/mdbootstrap/js/mdb.js')}}"></script>
+    <script src="{{asset('custom/mdbootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('custom/admin.js')}}"></script>
 </body>
 </html>
