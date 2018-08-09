@@ -45,7 +45,7 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 m-0 p-0 mx-auto">
             <div class="row m-0 p-0">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 mx-auto">
-                    <div class="row">
+                    <div class="row d-flex justify-content-center">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                             <div class="row position-relative" data-card>
                                 <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto" data-container>
@@ -59,7 +59,7 @@
                                             <h5 class="card-title text-uppercase text-center"><a>программы</a></h5>
                                             <p class="card-text text-center">Платные программы тренировок и питания</p>
                                             <div class="row m-0 p-0 col-12 d-flex justify-content-center">
-                                                <a href="#" class="btn z-depth-0">
+                                                <a href="/programs" class="btn z-depth-0">
                                                     <i class="fas fa-chevron-right text-dark"></i>
                                                 </a>
                                             </div>
@@ -82,7 +82,7 @@
                                             <h5 class="card-title text-uppercase text-center"><a>тренировки</a></h5>
                                             <p class="card-text text-center">Индивидуальные и групповые тренировки</p>
                                             <div class="row m-0 p-0 col-12 d-flex justify-content-center">
-                                                <a href="#" class="btn z-depth-0">
+                                                <a href="/training" class="btn z-depth-0">
                                                     <i class="fas fa-chevron-right text-dark"></i>
                                                 </a>
                                             </div>
@@ -92,29 +92,29 @@
                                 <div class="box col-12 w-100 position-absolute" style="bottom: -10%; z-index: -1"></div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                            <div class="row position-relative" data-card>
-                                <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto" data-container>
-                                    <div class="card p-2 rounded-0 border-0">
-                                        <div class="row">
-                                            <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                <img class="card-img-top align-self-center m-auto" src="{{asset('images/tap.svg')}}" alt="Card image cap">
-                                            </div>
-                                        </div>
-                                        <div class="card-body p-xl-0">
-                                            <h5 class="card-title text-uppercase text-center"><a>онлайн-тренер</a></h5>
-                                            <p class="card-text">Большой выбор спортивной одежды</p>
-                                            <div class="row m-0 p-0 col-12 d-flex justify-content-center">
-                                                <a href="#" class="btn z-depth-0">
-                                                    <i class="fas fa-chevron-right text-dark"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box col-12 w-100 position-absolute" style="bottom: -10%; z-index: -1"></div>
-                            </div>
-                        </div>
+                        {{--<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">--}}
+                            {{--<div class="row position-relative" data-card>--}}
+                                {{--<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto" data-container>--}}
+                                    {{--<div class="card p-2 rounded-0 border-0">--}}
+                                        {{--<div class="row">--}}
+                                            {{--<div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">--}}
+                                                {{--<img class="card-img-top align-self-center m-auto" src="{{asset('images/tap.svg')}}" alt="Card image cap">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="card-body p-xl-0">--}}
+                                            {{--<h5 class="card-title text-uppercase text-center"><a>онлайн-тренер</a></h5>--}}
+                                            {{--<p class="card-text">Большой выбор спортивной одежды</p>--}}
+                                            {{--<div class="row m-0 p-0 col-12 d-flex justify-content-center">--}}
+                                                {{--<a href="#" class="btn z-depth-0">--}}
+                                                    {{--<i class="fas fa-chevron-right text-dark"></i>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="box col-12 w-100 position-absolute" style="bottom: -10%; z-index: -1"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
             </div>

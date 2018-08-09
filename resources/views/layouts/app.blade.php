@@ -68,7 +68,11 @@
                 </div>
             </div>
         </nav>
-
+        <div class="p-1 w-100">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>

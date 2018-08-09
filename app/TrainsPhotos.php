@@ -13,4 +13,10 @@ class TrainsPhotos extends Model
 	protected $fillable = [
 		'train_id', 'photo'
 	];
+
+	public function trains()
+	{
+		return $this->belongsTo(Trains::class);
+	}
+
 }

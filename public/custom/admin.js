@@ -1,5 +1,6 @@
 $().ready(function () {
     let token = $('meta[name="csrf-token"]').attr('content'),
+        progressBar = $('#myProgress'),
         post = {
             'title': $('#newTitle'),
             'cover': $('#newPhoto'),
@@ -30,6 +31,9 @@ $().ready(function () {
             'photos': $('#feedbackPhotos'),
             'filename': $('#feedbackPhotoFilename'),
             'filenames': $('#feedbackPhotosFilename'),
+            'instagram': $('#feedbackInstagram'),
+            'facebook': $('#feedbackFacebook'),
+            'vk': $('#feedbackVK'),
             'save': $('#saveFeedback')
         },
         photos = {
@@ -42,7 +46,7 @@ $().ready(function () {
         trainFD = new FormData(),
         feedbackFD = new FormData(),
         photosFD = new FormData();
-
+    progressBar.hide();
     function filename(length, filename, file) {
         if(length === 1) {
             $(filename).val($(file)[0].files[0].name);
@@ -95,28 +99,229 @@ $().ready(function () {
         filename(length, photos.filenames, $(this));
     });
 
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': token
-        }
-    });
-    $.ajax({
-        url: '/home/add-post',
-        type: 'POST',
-        data: postFD,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: 'JSON',
-        success: function (response) {
 
-        },
-        error: function(error) {
-            for(let err in error.responseJSON.errors ) {
-                toastr.error(error.responseJSON.errors[err][0]);
+    post.save.on('click', function () {
+        progressBar.show();
+        postFD.append('title', post.title.val());
+        postFD.append('short', tinymce.get(post.short.attr('name')).getContent());
+        postFD.append('full', tinymce.get(post.full.attr('name')).getContent());
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': token
             }
-        }
+        });
+        $.ajax({
+            xhr: function()
+            {
+                let xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+                        let percentComplete = evt.loaded / evt.total;
+                        progressBar.find('#myBar').attr('style','width:' + percentComplete*100 + '%');
+                    }
+                }, false);
+                return xhr;
+            },
+            url: '/home/add-new',
+            type: 'POST',
+            data: postFD,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'JSON',
+            success: function (response) {
+                if(response.success) {
+                    clearAll('#new');
+                    tinymce.get(post.short.attr('name')).setContent('');
+                    tinymce.get(post.full.attr('name')).setContent('');
+                    toastr.success(response.success);
+                    progressBar.hide();
+                }
+                if(response.error) {
+                    toastr.error(response.error);
+                }
+
+            },
+            error: function(error) {
+                for(let err in error.responseJSON.errors ) {
+                    toastr.error(error.responseJSON.errors[err][0]);
+                }
+            }
+        });
     });
+
+    program.save.on('click', function () {
+        programFD.append('program', program.program.val());
+        programFD.append('price', program.price.val());
+        programFD.append('short', tinymce.get(program.short.attr('name')).getContent());
+        programFD.append('full', tinymce.get(program.full.attr('name')).getContent());
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': token
+            }
+        });
+        $.ajax({
+            url: '/home/add-program',
+            type: 'POST',
+            data: programFD,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'JSON',
+            success: function (response) {
+                clearAll('#programs');
+                tinymce.get(program.short.attr('name')).setContent('');
+                tinymce.get(program.full.attr('name')).setContent('');
+                toastr.success(response.success);
+            },
+            error: function(error) {
+                for(let err in error.responseJSON.errors ) {
+                    toastr.error(error.responseJSON.errors[err][0]);
+                }
+            }
+        });
+    });
+
+    train.save.on('click', function () {
+        progressBar.show();
+        trainFD.append('train', train.train.val());
+        trainFD.append('price', train.price.val());
+        trainFD.append('description', tinymce.get(train.description.attr('name')).getContent());
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': token
+            }
+        });
+        $.ajax({
+            xhr: function()
+            {
+                let xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+                        let percentComplete = evt.loaded / evt.total;
+                        progressBar.find('#myBar').attr('style','width:' + percentComplete*100 + '%');
+                    }
+                }, false);
+                return xhr;
+            },
+            url: '/home/add-train',
+            type: 'POST',
+            data: trainFD,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'JSON',
+            success: function (response) {
+                clearAll('#trains');
+                tinymce.get(train.description.attr('name')).setContent('');
+                toastr.success(response.success);
+                trainFD.delete('photos[]');
+                progressBar.hide();
+            },
+            error: function(error) {
+                for(let err in error.responseJSON.errors ) {
+                    toastr.error(error.responseJSON.errors[err][0]);
+                }
+            }
+        });
+    });
+
+    feedback.save.on('click', function () {
+        progressBar.show();
+        feedbackFD.append('name', feedback.name.val());
+        if(feedback.instagram.val() !== '') {
+            feedbackFD.append('instagram', feedback.instagram.val());
+        }
+        if(feedback.facebook.val() !== '') {
+            feedbackFD.append('facebook', feedback.facebook.val());
+        }
+        if(feedback.vk.val() !== '') {
+            feedbackFD.append('vk', feedback.vk.val());
+        }
+        feedbackFD.append('feedback', tinymce.get(feedback.feedback.attr('name')).getContent());
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': token
+            }
+        });
+        $.ajax({
+            xhr: function()
+            {
+                let xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+                        let percentComplete = evt.loaded / evt.total;
+                        progressBar.find('#myBar').attr('style','width:' + percentComplete*100 + '%');
+                    }
+                }, false);
+                return xhr;
+            },
+            url: '/home/add-feedback',
+            type: 'POST',
+            data: feedbackFD,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'JSON',
+            success: function (response) {
+                clearAll('#feedback');
+                tinymce.get(feedback.feedback.attr('name')).setContent('');
+                toastr.success(response.success);
+                progressBar.hide();
+                feedbackFD.delete('photos[]');
+            },
+            error: function(error) {
+                for(let err in error.responseJSON.errors ) {
+                    toastr.error(error.responseJSON.errors[err][0]);
+                }
+            }
+        });
+    });
+
+    photos.save.on('click', function () {
+        progressBar.show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': token
+            }
+        });
+        $.ajax({
+            xhr: function()
+            {
+                let xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+                        let percentComplete = evt.loaded / evt.total;
+                        progressBar.find('#myBar').attr('style','width:' + percentComplete*100 + '%');
+                    }
+                }, false);
+                return xhr;
+            },
+            url: '/home/add-photos',
+            type: 'POST',
+            data: photosFD,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'JSON',
+            success: function (response) {
+                clearAll('#photos');
+                toastr.success(response.success);
+                progressBar.hide();
+                photosFD.delete('photos[]');
+            },
+            error: function(error) {
+                for(let err in error.responseJSON.errors ) {
+                    toastr.error(error.responseJSON.errors[err][0]);
+                }
+            }
+        });
+    })
+
+
 
 
 });

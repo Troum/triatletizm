@@ -48,3 +48,13 @@ div.mce-tinymce {
 .file-field span {
     cursor: pointer;
 }
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar {
+    width: 1%;
+    height: 10px;
+    background-color: #0d47a1;
+}

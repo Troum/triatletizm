@@ -128,6 +128,7 @@
                         </div>
                         <div class="col-xl-9 m-0 p-0">
                             <div class="row mb-5 mr-0 ml-0 mt-5 p-0">
+                                @foreach($programs as $program)
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 p-0 mb-5">
                                     <div class="row position-relative d-flex justify-content-center align-content-center" data-card>
                                         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto" data-container>
@@ -135,7 +136,7 @@
                                                 <div class="row position-relative">
                                                     <div class="col-8 col-lg-8 col-xl-11 p-5 p-xl-2 d-flex justify-content-start align-content-start" style="z-index: 2">
                                                         <p class="text-uppercase d-inline-block ml-4 mt-0 mb-0 font-weight-bold">
-                                                            пробный
+                                                            {{$program->name}}
                                                         </p>
                                                     </div>
                                                     <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 d-flex justify-content-start align-content-start position-absolute" style="top: 41%">
@@ -148,20 +149,20 @@
                                                             <img class="card-img-top align-self-center m-auto" src="{{asset('images/polygon.png')}}" alt="Card image cap">
                                                         </div>
                                                         <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 align-self-center m-auto position-absolute" style="top: 38%">
-                                                            <h1 class="text-center m-0">1.</h1>
+                                                            <h1 class="text-center m-0">{{$loop->iteration}}.</h1>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-8 col-lg-8 col-xl-8 p-5 p-xl-2 m-2 mx-auto d-flex justify-content-center align-content-center">
-                                                            <p class="card-text text-justify" style="font-size: smaller">Данный курс включает в себя бесплатную пробную версию моей программы тренировок и правильной схемы питания по которой вы поймете нужна ли вам платная версия или нафиг надо.</p>
+                                                        {!! $program->short_description !!}
                                                         </div>
                                                     </div>
                                                     <div class="row m-0 p-0 col-12 d-flex justify-content-center" data-more>
                                                         <div class="col-6 mx-auto m-0 p-2 text-center" data-price>
                                                             <p class="font-weight-bold text-dark">
-                                                                $: Free
+                                                                $: {{$program->price}}
                                                             </p>
-                                                            <a href="#" class="font-weight-bold text-dark" style="font-size: .7em; color: inherit;" data-link>
+                                                            <a href="#" class="font-weight-bold text-dark" style="font-size: .7em; color: inherit;" data-link="{{$program->id}}">
                                                                 Подробнее >>
                                                             </a>
                                                         </div>
@@ -172,7 +173,8 @@
                                         <div class="box col-10 align-self-auto w-100 position-absolute" style="bottom: -3%; z-index: 0"></div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 p-0 mb-5">
+                                @endforeach
+                                {{--<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 p-0 mb-5">
                                     <div class="row position-relative d-flex justify-content-center align-content-center" data-card>
                                         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto" data-container>
                                             <div class="card p-2 rounded-0 border-0">
@@ -391,7 +393,7 @@
                                         </div>
                                         <div class="box col-10 align-self-auto w-100 position-absolute" style="bottom: -3%; z-index: 0"></div>
                                     </div>
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
                     </div>

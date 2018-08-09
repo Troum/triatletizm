@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="row m-0 p-0">
-        <div class="col-xl-12 m-0 p-0 feedback-container">
+        <div class="col-xl-12 m-0 p-0">
             <div class="row mt-5 mb-5 pt-5 pb-5 d-flex">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-0 p-0 position-relative d-flex justify-content-center align-content-center">
                     <div class="row m-0 p-0 position-absolute" style="right: 0; bottom: 5%">
@@ -59,160 +59,72 @@
             <div class="row mt-2 mb-5 pb-5 pt-4 d-flex">
                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 m-0 p-0 mx-auto">
                     <div class="row m-0 p-0">
-                        <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 mb-3 text-justify">
-                            <div class="row">
-                                <div class="col-xl-5 p-2 bg-yellow text-center">
-                                    <a href="/feedback" class="font-weight-bold">
-                                        Отзывы
-                                    </a>
-                                </div>
-                                <div class="col-1"></div>
-                                <div class="col-xl-5 p-2 border border-dark text-center">
-                                    <a href="#" class="font-weight-bold">
-                                        Результаты
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="col-xl-12 m-0 p-0">
+                            <ul class="nav nav-tabs d-flex justify-content-center" role="tablist">
+                                <li class="nav-item col-xl-4 text-center">
+                                    <a class="nav-link active" data-toggle="tab" href="#panel6" role="tab">Отзывы</a>
+                                </li>
+                                <li class="nav-item col-xl-4 text-center">
+                                    <a class="nav-link" data-toggle="tab" href="#panel7" role="tab">Результаты</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row m-0 p-0" id="feeedback-container">
-                <div class="col-xl-12 m-0 p-0">
-                    <div class="row mt-2 mb-5 pb-5 pt-4 d-flex">
-                        <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-8 m-0 p-0 mx-auto">
-                            <div class="row position-relative m-0 p-0">
-                                <div class="col-xl-2 m-0 p-0 position-absolute" style="top: 0; right: 1%;z-index: 1">
-                                    <img src="{{asset('images/corner.png')}}" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="row mt-3 mb-3 p-0 d-flex justify-content-center align-content-center" >
-                                <div class="col-xl-11 mt-2 p-4 align-self-center m-auto bg-light" style="z-index: 2">
-                                    <div class="row m-0 p-0">
-                                        <div class="col-xl-3">
-                                            <div class="row m-0 p-0">
-                                                <div class="col-xl-8 mx-auto m-0 p-0">
-                                                    <div class="row m-0 p-0">
-                                                        <div class="col-xl-12 m-0 p-0 text-center">
-                                                            <img src="{{asset('images/girl.jpg')}}" alt="" class="img-fluid rounded-circle">
+                    <div class="row m-0 p-0">
+                        <div class="col-xl-12 m-0 p-0">
+                            <div class="tab-content">
+                                <div class="tab-pane fade in show active" id="panel6" role="tabpanel">
+                                    <div class="col-xl-12 m-0 p-0">
+                                        <div class="row m-0 p-0" id="feedbackContainer">
+                                            @include('page-parts.feedback')
+                                        </div>
+                                        <div class="row m-0 p-0">
+                                            <div class="col-xl-12 m-0 p-0">
+                                                @if(count($posts) === 0)
+                                                @else
+                                                    <div class="row mt-2 mb-5 pb-5 pt-4 d-flex">
+                                                        <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 m-0 p-0 mx-auto">
+                                                            <div class="row m-0 p-0">
+                                                                <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 mb-3 text-justify">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-5 p-2 border border-dark text-center mx-auto">
+                                                                            <a href="/" class="font-weight-bold" data-show data-click="click">
+                                                                                Показать ещё
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xl-8 mx-auto">
-                                                    <p class="font-weight-bold">
-                                                        Рената Натуральнова
-                                                    </p>
-                                                </div>
-                                                <div class="col-xl-8 mx-auto">
-                                                    <i class="fab fa-instagram fa-1x mr-3"></i>
-                                                    <i class="fab fa-vk fa-1x mr-3"></i>
-                                                    <i class="fab fa-facebook-f fa-1x"></i>
-                                                </div>
+                                                @endif
                                             </div>
                                         </div>
-                                        <div class="col-xl-9">
-                                            <div class="row">
-                                                <div class="col-11 mx-auto d-flex justify-content-end">
-                                                    <i class="fas fa-heart fa-1x ml-3"></i>
-                                                    <i class="fas fa-share-square fa-1x ml-3"></i>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-11 mt-2 p-2 mx-auto text-justify">
-                                                    Ой, как здорово, что теперь можно со всеми поделиться своими впечатлениями, своими эмоциями и нашими достижениями!
-                                                    Очень важно, чтобы каждый человек на своем жизненном пути встречал хороших учителей. Как правило, мне с этим везет! И особенно повезло мне с личным тренером! В тренажерном зале рядом должен быть профессиональный, внимательный, терпеливый тренер! И да, Богдан, ты именно такой! Благодаря грамотно составленным программам тренировок и питания, правильным наставлениям, созданию атмосферы доверия и моему старанию (я же всегда стараюсь?!), мы пришли к тем результатам, которые можно увидеть на фото и видео.
-                                                    24 кг... "Круто", - скажет почти каждый! Но еще круче то, что происходит внутри, а не снаружи! Я стала целеустремленней, уверенней в себе, сильней и надежней благодаря спорту, который для меня открыл ТЫ, Богдан!
-                                                    СПАСИБО!!!!!
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xl-11 mx-auto">
-                                                    <div class="row m-0 p-0">
-                                                        <div class="col-xl-2 p-0 text-center position-relative feedback-height" data-feedback>
-                                                            <div class="row m-0 p-0" data-photo>
-                                                                <div class="col-xl-12 m-0 p-0 bg-transparent position-absolute" style="top: 0; left: 0" data-full>
-                                                                    <img src="{{asset('images/full.png')}}" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <img src="{{asset('images/gym-one-min.jpg')}}" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="col-xl-2 p-0 text-center position-relative feedback-height" data-feedback>
-                                                            <div class="row m-0 p-0" data-photo>
-                                                                <div class="col-xl-12 m-0 p-0 bg-transparent position-absolute" style="top: 0; left: 0" data-full>
-                                                                    <img src="{{asset('images/full.png')}}" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <img src="{{asset('images/gym-two-min.jpg')}}" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="col-xl-2 p-0 text-center position-relative feedback-height" data-feedback>
-                                                            <div class="row m-0 p-0" data-photo>
-                                                                <div class="col-xl-12 m-0 p-0 bg-transparent position-absolute" style="top: 0; left: 0" data-full>
-                                                                    <img src="{{asset('images/full.png')}}" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <img src="{{asset('images/gym-three-min.jpg')}}" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="col-xl-2 p-0 text-center position-relative feedback-height" data-feedback>
-                                                            <div class="row m-0 p-0" data-photo>
-                                                                <div class="col-xl-12 m-0 p-0 bg-transparent position-absolute" style="top: 0; left: 0" data-full>
-                                                                    <img src="{{asset('images/full.png')}}" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <img src="{{asset('images/gym-four-min.jpg')}}" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="col-xl-2 p-0 text-center position-relative feedback-height" data-feedback>
-                                                            <div class="row m-0 p-0" data-photo>
-                                                                <div class="col-xl-12 m-0 p-0 bg-transparent position-absolute" style="top: 0; left: 0" data-full>
-                                                                    <img src="{{asset('images/full.png')}}" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <img src="{{asset('images/gym-five-min.jpg')}}" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="col-xl-2 p-0 text-center position-relative feedback-height" data-feedback>
-                                                            <div class="row m-0 p-0" data-photo>
-                                                                <div class="col-xl-12 m-0 p-0 bg-transparent position-absolute" style="top: 0; left: 0" data-full>
-                                                                    <img src="{{asset('images/full.png')}}" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <img src="{{asset('images/gym-six-min.jpg')}}" alt="" class="img-fluid">
-                                                        </div>
-                                                    </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="panel7" role="tabpanel">
+                                    <div class="col-xl-12 m-0 p-0">
+                                        <div class="row m-0 p-0" id="feedbackContainer">
+                                            <div class="col-xl-12 mt-xl-5 p-0 mx-auto">
+                                                <div class="row mt-xl-5 p-0">
+                                                    @foreach($gallery as $photo)
+                                                        <a href="{{asset('images/gallery/'.$photo->photo)}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 mt-xl-3 mb-xl-3">
+                                                            <img src="{{asset('images/gallery/'.$photo->photo)}}" alt="" class="img-fluid">
+                                                        </a>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row position-relative m-0 p-0">
-                                <div class="col-xl-2 m-0 p-0 position-absolute" style="bottom: 0; left: 1%;z-index: 1">
-                                    <img src="{{asset('images/corner.png')}}" alt="" class="img-fluid">
-                                </div>
-                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <div class="row mt-2 mb-5 pb-5 pt-4 d-flex">
-                <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 m-0 p-0 mx-auto">
-                    <div class="row m-0 p-0">
-                        <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 mb-3 text-justify">
-                            <div class="row">
-                                <div class="col-xl-5 p-2 border border-dark text-center mx-auto">
-                                    <a href="" class="font-weight-bold" data-show>
-                                        Показать ещё
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
-    <!-- Central Modal Small -->
-    <div class="modal fade" id="photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center align-content-center" role="document">
-            <img src="" alt="" class="img-fluid d-block align-self-center m-auto">
-        </div>
-    </div>
+
 @endsection

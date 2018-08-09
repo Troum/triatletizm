@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Trains extends Model
+class Train extends Model
 {
 	protected $dates = [
 		'created_at', 'updated_at'
@@ -18,5 +18,4 @@ class Trains extends Model
 	{
 		return $this->hasMany(TrainsPhotos::class);
 	}
-
 }

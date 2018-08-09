@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FeedbackPhotos extends Model
+class ResultsPhotos extends Model
 {
 	protected $dates = [
 		'created_at','updated_at'
 	];
 
 	protected $fillable = [
-		'feedback_id','photo'
+		'result_id','photo'
 	];
 
-	public function feedback()
+	public function results()
 	{
-		return $this->belongsTo(Feedback::class);
+		return $this->belongsTo(Result::class);
 	}
 }

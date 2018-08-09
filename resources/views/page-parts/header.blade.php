@@ -53,7 +53,7 @@
                             <a class="nav-link text-dark text-uppercase" href="/training">тренировки</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark text-uppercase" href="/feedback">мне доверяют</a>
+                            <a class="nav-link text-dark text-uppercase" href="/results">мне доверяют</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark text-uppercase" href="/contacts">контакты</a>

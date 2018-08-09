@@ -5,9 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/mdb.css')}}">
     <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('custom/fontawesome-free/css/all.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" href="{{asset('custom/client.css')}}">
     <title>TRIATLETIZM</title>
 </head>
@@ -22,6 +24,7 @@
 <script src="{{asset('custom/mdbootstrap/js/mdb.js')}}"></script>
 <script src="{{asset('custom/mdbootstrap/js/bootstrap.js')}}"></script>
 <script src="{{asset('custom/fontawesome-free/js/all.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 <script src="{{asset('custom/client.js')}}"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <script>

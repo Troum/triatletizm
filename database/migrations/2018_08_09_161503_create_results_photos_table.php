@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrainsTable extends Migration
+class CreateResultsPhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTrainsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trains', function (Blueprint $table) {
+        Schema::create('results_photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('train');
-            $table->string('price');
-            $table->longText('train_description');
+	        $table->integer('result_id');
+	        $table->string('photo');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateTrainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trains');
+        Schema::dropIfExists('results_photos');
     }
 }
