@@ -11,6 +11,6 @@ class Program extends Model
     ];
 
     protected $fillable = [
-        'name', 'description', 'price', 'short_description', 'full_description'
+        'name', 'price', 'short_description', 'full_description'
     ];
 }

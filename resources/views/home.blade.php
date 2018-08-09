@@ -36,7 +36,7 @@
                             <div class="col-xl-8">
                                 <div class="tab-content vertical">
                                     <div class="tab-pane fade in show active" id="programs" role="tabpanel">
-                                        <h5 class="my-2 h5">Добавление тренировок</h5>
+                                        <h5 class="my-2 h5">Добавление программы</h5>
                                         <div class="row p-0">
                                             <div class="col-xl-12">
                                                 <div class="md-form">
@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="md-form">
-                                                    <textarea type="text" id="programDescription" class="md-textarea form-control" name="programDescription"></textarea>
+                                                    <textarea type="text" id="programFullDescription" class="md-textarea form-control" name="programFullDescription"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-xl-12">
@@ -203,9 +203,14 @@
                                                             <input type="file" id="galleryPhotos" name="galleryPhotos" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input id="galleryPhotos" class="file-path validate" type="text" placeholder="Загрузите до 20-и фотографий" disabled>
+                                                            <input id="galleryPhotosFilename" class="file-path validate" type="text" placeholder="Загрузите до 20-и фотографий" disabled>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="md-form text-right">
+                                                    <button class="btn btn-outline-blue rounded-0" id="saveGallery">Сохранить</button>
                                                 </div>
                                             </div>
                                         </div>

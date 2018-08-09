@@ -15,6 +15,12 @@ class CreateFeedbackTable extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('cover');
+            $table->longText('feedback');
+            $table->string('instagram')->default('');
+            $table->string('facebook')->default('');
+            $table->string('vk')->default('');
             $table->timestamps();
         });
     }

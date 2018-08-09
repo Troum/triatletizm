@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/mdb.css')}}">
     <link rel="stylesheet" href="{{asset('custom/mdbootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('custom/fontawesome-free/css/all.css')}}">
+    <link rel="stylesheet" href="{{asset('custom/toastr/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('custom/admin.css')}}">
     <link rel="icon" href="{{asset('favicon.ico')}}">
 </head>
@@ -76,6 +77,7 @@
     <script src="{{asset('custom/popper.js/dist/umd/popper.js')}}"></script>
     <script src="{{asset('custom/mdbootstrap/js/mdb.js')}}"></script>
     <script src="{{asset('custom/mdbootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('custom/toastr/toastr.min.js')}}"></script>
     <script src="{{asset('custom/tinymce/js/tinymce/tinymce.min.js')}}"></script>
     <script>
         tinymce.init({

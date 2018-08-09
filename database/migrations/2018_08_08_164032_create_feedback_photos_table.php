@@ -15,6 +15,8 @@ class CreateFeedbackPhotosTable extends Migration
     {
         Schema::create('feedback_photos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('feedback_id');
+            $table->string('photo');
             $table->timestamps();
         });
     }

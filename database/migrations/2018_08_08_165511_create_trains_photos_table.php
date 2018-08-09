@@ -15,6 +15,8 @@ class CreateTrainsPhotosTable extends Migration
     {
         Schema::create('trains_photos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('train_id');
+            $table->string('photo');
             $table->timestamps();
         });
     }
