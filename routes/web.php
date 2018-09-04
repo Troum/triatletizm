@@ -20,6 +20,7 @@ Route::get('/training','IndexController@training');
 Route::get('/contacts','IndexController@contacts');
 Route::post('/open', 'IndexController@open');
 Route::post('/buy', 'IndexController@buy');
+Route::post('/show-new', 'IndexController@show');
 
 Auth::routes();
 

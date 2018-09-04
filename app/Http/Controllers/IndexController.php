@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use App\Result;
 use App\Gallery;
 use App\Program;
@@ -11,9 +12,24 @@ use Illuminate\Http\Response;
 
 class IndexController extends Controller
 {
+
+	public function months()
+	{
+		$months = array(
+			"01" => "Янв", "02" => "Фев",
+			"03" => "Март", "04" => "Апр", "05" => "Мая", "06" => "Июня",
+			"07" => "Июля", "08" => "Авг", "09" => "Сент",
+			"10" => "Окт", "11" => "Нояб", "12" => "Дек"
+		);
+
+		return $months;
+	}
+
     public function index()
     {
-        return view('index');
+    	$news = News::all();
+    	$months = $this->months();
+        return view('index', compact('news','months'));
     }
 
     public function programs()
@@ -63,6 +79,11 @@ class IndexController extends Controller
 	{
 		$train = Train::whereId($request->id)->first();
 		return response()->json(['name' => $train->train, 'price' => $train->price], Response::HTTP_OK);
+	}
+	public function show(Request $request)
+	{
+		$new = News::whereId($request->id)->first();
+		return response()->json(['new' => $new], Response::HTTP_OK);
 	}
 
 }

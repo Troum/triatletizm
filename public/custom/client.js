@@ -9,6 +9,7 @@ $().ready(function () {
 
     let body = $('body'),
         more = $('#moreInfo'),
+        news = $('#newsModal'),
         buy = $('#buyModal'),
         uri = window.location.toString(),
         logo = $('#logo'),
@@ -123,6 +124,38 @@ $().ready(function () {
     $('[data-pay]').each(function () {
         $(this).on('click', function () {
             $(this).css('color','red!important');
+        })
+    });
+
+    $('[data-new]').each(function () {
+        $(this).on('click', function (e) {
+            e.preventDefault();
+            fd.append('id', $(this).data('new'));
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '/show-new',
+                type: 'POST',
+                data: fd,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: 'JSON',
+                success: function (response) {
+                    news.find('img').attr('src', 'images/news/' + response.new.slug + '/cover/' + response.new.cover);
+                    news.find('[data-description]').html(response.new.full_new);
+                    news.find('#newsTitle').text(response.new.title);
+                    news.modal('show');
+                },
+                error: function(error) {
+                    for(let err in error.responseJSON.errors ) {
+                        toastr.error(error.responseJSON.errors[err][0]);
+                    }
+                }
+            });
         })
     })
 
